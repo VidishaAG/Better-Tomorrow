@@ -1,0 +1,63 @@
+/* NAVBAR */
+*{
+    margin: 0;
+    transition: all 0.2s;
+}
+body{
+    background-color: #DDDDDD;
+}
+header{
+    height:100px;
+    margin: 0 auto;
+    background-color: #1ab188;
+    display: flex;
+    justify-content:space-between;
+}
+.logoAndNav{
+    display: inline-flex;
+}
+.navitem{
+    padding: 15px;
+    margin: auto 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+.navitem a{
+    color: #fff;
+    text-decoration: none;
+    font-size:125% ;
+    transition: color 0.3s;
+}
+.navitem a:hover{
+    color: black;
+}
+.logo{
+    padding: 0;
+    margin: 0 auto;
+}
+.profile{
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 20px;
+}
+
+/* CARD VIEW */
+
+.card{
+    padding: 10px;
+    width: fit-content;
+    margin : 0 auto;
+    vertical-align: middle;
+    background-color: #F2F2F2;
+    border-radius:5px;
+    margin-top: 10px;
+}
+.card .nameAndProfile{
+    display: inline-flex;
+}
+.card .nameAndProfile span{
+    margin: auto 0;
+    padding-left: 10px;
+    box-shadow: 2px;
+}
