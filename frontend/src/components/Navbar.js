@@ -1,11 +1,13 @@
 import React from 'react'
+import logo from '../assets/logo.png'
+import user from '../assets/user.png'
 
 export const Navbar = () => {
   return (
     <>
       <div className="logoAndNav">
         <div className="logo">
-          <img src="/assets/logo2.png" alt="logo2.png" width="100" />
+          <img src={logo} alt="logo.png" width="100" />
         </div>
         <div className="navitem">
           <a href="/">Nav item 1</a>
@@ -18,7 +20,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="profile">
-        <a href="/"><img src="/assets/user.png" alt="user.png" width="50" /></a>
+        <a href="/"><img src={user} alt="user.png" width="50" /></a>
       </div>
       <div>
       </div>
