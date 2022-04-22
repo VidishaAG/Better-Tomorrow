@@ -3,10 +3,16 @@ import './css/home.css'
 import './css/login.css'
 
 import { Navbar } from './components/Navbar';
+import { Card } from './components/Card';
+import { Login } from './components/Login';
 
 function App() {
   return (
-    <Navbar/>
+    <div>
+      <Navbar />
+      <Card />
+      <Login />
+    </div>
   );
 }
 
