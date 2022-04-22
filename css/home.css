@@ -52,6 +52,7 @@ header{
     background-color: #F2F2F2;
     border-radius:5px;
     margin-top: 10px;
+    box-shadow: 0px 5px 5px grey
 }
 .card .nameAndProfile{
     display: inline-flex;
