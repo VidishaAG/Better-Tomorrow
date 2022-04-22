@@ -2,17 +2,20 @@ import './App.css';
 import './css/navbar.css'
 import './css/card.css'
 import './css/login.css'
+import './css/about.css'
 
 import { Navbar } from './components/Navbar';
 import { Card } from './components/Card';
 import { Login } from './components/Login';
+import { About } from './components/About';
 
 function App() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <Card /> */}
-      <Login />
+      {/* <Login /> */}
+      <About />
     </div>
   );
 }
