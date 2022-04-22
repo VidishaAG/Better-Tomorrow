@@ -1,5 +1,6 @@
 import './App.css';
-import './css/home.css'
+import './css/navbar.css'
+import './css/card.css'
 import './css/login.css'
 import './css/about.css'
 
