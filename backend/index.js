@@ -5,10 +5,12 @@ import bodyParser from "body-parser";
 
 import LOGIN_ROUTE from "./Routes/login.js";
 import REGISTER_ROUTE from "./Routes/register.js";
+import ISSUE_ROUTE from "./Routes/issue.js";
 
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 // app.use(
 //   bodyParser.urlencoded({

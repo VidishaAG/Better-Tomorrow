@@ -6,6 +6,7 @@ export const NGO = () => {
         {
             "index": 1,
             "Name": "Aashalata Victoria Wilkinson Memorial Charitable",
+            "Image": "http://www.aashalata.org/css/logo/Logo.svg",
             "AreaOfWork": "Children, Education & Literacy",
             "Criteria": "Invited to participate in the 1st NGO Conference Of MWCD, 9 Oct 2017",
             "Contact": "L-96-D , 2nd Floor ,D.D.A Flats , Saket. 10058, NEW DELHI (DELHI)"
@@ -133,6 +134,7 @@ export const NGO = () => {
         <>
         {NGOlist.map((element, index) => {
             return <div style={{border: "1px dashed black"}}>
+                <img src={element.Image}></img>
                 <h1>{element.Name}</h1>
                 <p>{element.AreaOfWork}</p>
                 <p>{element.Criteria}</p>
