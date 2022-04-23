@@ -1,6 +1,7 @@
 import {React,useState} from 'react'
 import user from '../assets/user.png'
 import upvote from '../assets/upvote.png'
+import {Link} from 'react-router-dom'
 export const Card = () => {
   const [counter,setCounter] = useState(0);
   const [x,setX] = useState(0);
@@ -24,8 +25,12 @@ export const Card = () => {
       <div className="cardBody">
         <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ratione quos quae quo aliquam, beatae ducimus deserunt voluptatum eaque facere impedit quas ipsam cum vero velit deleniti numquam sapiente sunt magnam iure. Vel libero veritatis aliquam laudantium id laborum consequuntur est dolorum? Facere, doloribus repellat! Maxime, eius amet. Vero, libero.</p>
       </div>
-      <div className="votesAndComments">
-        <input type="image" src={upvote} alt="upvote.png" className="upvoteImage" style={{width:"14px"}} onClick={fun} /><span className="upvoteCount">{counter}</span>
+      <div className='doFlex'>
+        <div className="votesAndComments">
+          <input type="image" src={upvote} alt="upvote.png" className="upvoteImage" style={{width:"14px"}} onClick={fun} /><span className="upvoteCount">{counter}</span>
+        </div>
+        
+        <div className='btn'><Link to="/payment">Donate 500rs</Link></div>
       </div>
     </div>
   )
