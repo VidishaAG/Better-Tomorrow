@@ -7,14 +7,14 @@ route.post("/register", async (req, res) => {
   const userQuery = req.body;
   User.findOne({ email: userQuery.email }, (err, user) => {
     if (user) {
-      res.send({ message: "User already registerd" });
+      res.status(200).json({ message: "User already registerd", "user": user });
     } else {
       const newUser = saveUser(userQuery);
       if (newUser) {
         console.log("Added successfully");
         res.status(201).json({...newUser, message : "User Added Redirecting to login..."});
       } else {
-        res.status(409).json({ message: err.message });
+        res.status(400).json({ message: err.message });
       }
     }
   });
