@@ -4,17 +4,19 @@ import './css/card.css'
 import './css/login.css'
 import './css/about.css'
 import './css/payment.css'
-import { Navbar } from './components/Navbar';
-import { Card } from './components/Card';
-import { Login } from './components/Login';
-import { About } from './components/About';
 
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+
+import { Navbar } from './components/Navbar';
+import { Card } from './components/Card';
+import { Login } from './components/Login';
+import { About } from './components/About';
 import Payment from './components/Payment';
+import { NGO } from './components/NGO';
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Route path="/issues" element={<Card />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/about" element={<About />} />
+        <Route path="/ngo" element={<NGO />} />
       </Routes>
     </BrowserRouter>
   );

@@ -19,6 +19,9 @@ export const Navbar = () => {
           <Link to="/payment">Payment</Link>
         </div>
         <div className="navitem">
+          <Link to="/ngo">Featured NGOs</Link>
+        </div>
+        <div className="navitem">
           <Link to="/about">About Us</Link>
         </div>
       </div>
