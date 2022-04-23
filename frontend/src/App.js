@@ -9,14 +9,22 @@ import { Card } from './components/Card';
 import { Login } from './components/Login';
 import { About } from './components/About';
 
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 function App() {
   return (
-    <div>
-      {/* <Navbar /> */}
-      {/* <Card /> */}
-      {/* <Login /> */}
-      <About />
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        {/* <Card /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
