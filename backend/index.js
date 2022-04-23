@@ -46,6 +46,7 @@ mongoose
 
 app.use("/", LOGIN_ROUTE);
 app.use("/", REGISTER_ROUTE);
+app.use("/", ISSUE_ROUTE);
 
 // razor pay
 // var instance = new Razorpay({
