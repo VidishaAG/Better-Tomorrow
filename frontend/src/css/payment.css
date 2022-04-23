@@ -35,13 +35,17 @@
     align-items:center;
 
 }
-.submitButton{
+.btn{
     border-color: #96dbe2;
+    cursor: pointer;
     color: #fff;
     padding: 5px;
     background-color: #1ab188;
     border-radius: 3px;
     background-image: linear-gradient(to right, var(--left-color), var(--right-color));
+}
+.btn:hover{
+    background-image: linear-gradient(to right, #7aaa86, #76a9af);
 }
 .payment form{
     display: flex;
