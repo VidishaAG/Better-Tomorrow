@@ -27,12 +27,12 @@ export const Navbar = () => {
       </div>
       <div className="profile">
         
-        <div class="dropdown">
-        <button class="dropbtn"><span>{localStorage.email}</span></button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+        <div className="dropdown">
+        <button className="dropbtn"><span>{localStorage.email}</span></button>
+        <div className="dropdown-content">
+          <a href="/">Link 1</a>
+          <a href="/">Link 2</a>
+          <a href="/">Link 3</a>
         </div>
       </div> 
         <Link to="/"><img src={user} alt="user.png" width="50" /></Link>

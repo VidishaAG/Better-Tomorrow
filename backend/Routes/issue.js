@@ -20,4 +20,9 @@ route.post("/submitIssue", (req, res) => {
   .catch((err) => console.log(err));
 });
 
+route.get("/allIssues", async (req, res) => {
+  const allIssues = await Issue.find();
+  res.status(200).json(allIssues);
+});
+
 export default route;
