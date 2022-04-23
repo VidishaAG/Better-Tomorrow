@@ -5,6 +5,7 @@ import './css/login.css'
 import './css/about.css'
 import './css/payment.css'
 import './css/ideasubmit.css'
+import './css/footer.css'
 import {
   BrowserRouter,
   Routes,
@@ -18,6 +19,7 @@ import { About } from './components/About';
 import Payment from './components/Payment';
 import { NGO } from './components/NGO';
 import {IdeaSubmit} from './components/IdeaSubmit';
+import {Footer} from './components/Footer';
 function App() {
   return (
     <BrowserRouter>
@@ -30,6 +32,7 @@ function App() {
         <Route path="/ngo" element={<NGO />} />
         <Route path="/ideasubmit" element={<IdeaSubmit />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
