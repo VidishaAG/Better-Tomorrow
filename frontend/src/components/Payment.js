@@ -2,7 +2,7 @@ import React from 'react';
 
 const Payment = () => {
   return (
-    <div>
+    <div className="payment">
         <form>
             <table>
                 <tr>
@@ -14,12 +14,11 @@ const Payment = () => {
                     <td><input type="tel" id="phone" name="phone" /></td>
                 </tr>
                 <tr>
-                    <td>amount:</td>
+                    <td>Amount:</td>
                     <td><input type="text" id="amount" name="amount"/></td>
                 </tr>
             </table>
-
-            <input type="submit" value="submit" />
+            <input type="submit" value="submit" className="submitButton"/>
         </form>
 
     </div>
