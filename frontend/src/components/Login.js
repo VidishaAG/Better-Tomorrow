@@ -137,7 +137,7 @@ export const Login = () => {
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <p className="forgot-password">Forgot your password?</p>
-            <button className="control-button in" onClick={signin()}>Sign In</button>
+            <button className="control-button in" onClick={signin}>Sign In</button>
           </form>
         </div>
         <div className="sign-up" id="sign-up-info">
@@ -164,7 +164,7 @@ export const Login = () => {
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <button className="control-button up" onClick={signup()}>Sign Up</button>
+            <button className="control-button up" onClick={signup}>Sign Up</button>
           </form>
         </div>
       </div>

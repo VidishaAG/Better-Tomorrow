@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import user from '../assets/user.png'
 
@@ -7,16 +8,18 @@ export const Navbar = () => {
     <header>
       <div className="logoAndNav">
         <div className="logo">
-          <img src={logo} alt="logo.png" width="100" />
+          <Link to="/">
+            <img src={logo} alt="logo.png" width="100" />
+          </Link>
         </div>
         <div className="navitem">
-          <a href="/">Nav item 1</a>
+          <Link to="/issues">Issues</Link>
         </div>
         <div className="navitem">
-          <a href="/">Nav item 2</a>
+          <Link to="/payment">Payment</Link>
         </div>
         <div className="navitem">
-          <a href="/">Nav item 3</a>
+          <Link to="/about">About Us</Link>
         </div>
       </div>
       <div className="profile">

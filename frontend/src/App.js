@@ -22,9 +22,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/issues" element={<Card />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/about" element={<About />} />
-        <Route path="/Payment" element={<Payment />} />
-        {/* <Card /> */}
       </Routes>
     </BrowserRouter>
   );
