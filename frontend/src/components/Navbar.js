@@ -26,6 +26,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="profile">
+        <span>{localStorage.email}</span>
         <Link to="/"><img src={user} alt="user.png" width="50" /></Link>
       </div>
       <div>
