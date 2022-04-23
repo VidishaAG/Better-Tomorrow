@@ -16,9 +16,6 @@ export const Navbar = () => {
           <Link to="/issues">Issues</Link>
         </div>
         <div className="navitem">
-          <Link to="/payment">Payment</Link>
-        </div>
-        <div className="navitem">
           <Link to="/ngo">Featured NGOs</Link>
         </div>
         <div className="navitem">
