@@ -5,20 +5,20 @@ import { useNavigate } from 'react-router-dom';
 export const Login = () => {
 
   const navigate = useNavigate();
-  
+
 
   const signup = async (e) => {
     e.preventDefault();
     const name = document.getElementById("signup-name").value;
     const email = document.getElementById("signup-email").value;
     const password = document.getElementById("signup-password").value;
-    
+
     const data = {
       "name": name,
       "email": email,
       "password": password
     };
-    
+
     const url = "http://localhost:5000/register";
     const response = await fetch(url, {
       method: 'POST',
@@ -45,12 +45,10 @@ export const Login = () => {
     e.preventDefault();
     const email = document.getElementById("signin-email").value;
     const password = document.getElementById("signin-password").value;
-    
     const data = {
       "email": email,
       "password": password
     };
-    
     const url = "http://localhost:5000/login";
     const response = await fetch(url, {
       method: 'POST',
@@ -60,7 +58,6 @@ export const Login = () => {
       body: JSON.stringify(data)
     });
     const json = await response.json();
-    
     if (response.status === 200) {
       localStorage.setItem("email", email);
       navigate('/issues');
@@ -147,13 +144,11 @@ export const Login = () => {
     <div className="container">
       <div className="overlay" id="overlay">
         <div className="sign-in" id="sign-in">
-          <h1>Welcome Back!</h1>
-          <p>To keep connected with us please login with your personal info</p>
+          <h1>Glad to have you back!</h1>
           <button className="switch-button" id="slide-right-button">Sign In</button>
         </div>
         <div className="sign-up" id="sign-up">
-          <h1>Hello, Friend!</h1>
-          <p>Enter your personal details and start a journey with us</p>
+          <h1>Before you start</h1>
           <button className="switch-button" id="slide-left-button">Sign Up</button>
         </div>
       </div>
