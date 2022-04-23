@@ -19,11 +19,25 @@ export const Navbar = () => {
           <Link to="/ngo">Featured NGOs</Link>
         </div>
         <div className="navitem">
+          <Link to="/ideasubmit">Submit Ideas</Link>
+        </div>
+        <div className="navitem">
           <Link to="/about">About Us</Link>
+        </div>
+        <div className="navitem">
+          <Link to="/leaderboard">Leaderboard</Link>
         </div>
       </div>
       <div className="profile">
-        <span>{localStorage.email}</span>
+        
+        <div className="dropdown">
+        <button className="dropbtn"><span>{localStorage.email}</span></button>
+        <div className="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div> 
         <Link to="/"><img src={user} alt="user.png" width="50" /></Link>
       </div>
       <div>

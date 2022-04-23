@@ -6,6 +6,8 @@ import './css/about.css'
 import './css/payment.css'
 import './css/ideasubmit.css'
 import './css/footer.css'
+
+import './css/leaderboard.css'
 import {
   BrowserRouter,
   Routes,
@@ -19,7 +21,11 @@ import { About } from './components/About';
 import Payment from './components/Payment';
 import { NGO } from './components/NGO';
 import {IdeaSubmit} from './components/IdeaSubmit';
+
 import {Footer} from './components/Footer';
+
+import {Leaderboard} from './components/Leaderboard';
+
 function App() {
   return (
     <BrowserRouter>
@@ -31,6 +37,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/ngo" element={<NGO />} />
         <Route path="/ideasubmit" element={<IdeaSubmit />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
       <Footer/>
     </BrowserRouter>

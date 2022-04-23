@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import Razorpay from 'razorpay';
 import bodyParser from "body-parser";
 import shortid from 'shortid'
 import LOGIN_ROUTE from "./Routes/login.js";
@@ -46,12 +47,12 @@ mongoose
 
 app.use("/", LOGIN_ROUTE);
 app.use("/", REGISTER_ROUTE);
+app.use("/", ISSUE_ROUTE);
 
 // razor pay  
-import Razorpay from 'razorpay';
   const razorpay = new Razorpay({
-    key_id: 'rzp_test_XNoNQDW2fTj9n3',
-    key_secret: 'QYaFd5DEMEDaY7Sq9liC0ael'
+    key_id: 'rzp_test_1xLFW3XMUr7klD',
+    key_secret: '8eyTcA3Jn50f4wOrz2elkpQT'
   })
   
   
@@ -83,14 +84,13 @@ import Razorpay from 'razorpay';
     const payment_capture = 1
     const amount = 499
     const currency = 'INR'
-  
     const options = {
-      amount: amount * 100,
-      currency,
-      receipt: shortid.generate(),
-      payment_capture
+      "amount": amount * 100,
+      "currency":currency,
+      "receipt": shortid.generate(),
+      "payment_capture":payment_capture
     }
-  
+    console.log(options)
     try {
       const response = await razorpay.orders.create(options)
       console.log(response)

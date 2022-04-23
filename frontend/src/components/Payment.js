@@ -30,13 +30,13 @@ const Payment = () => {
         )
         console.log(data)
         var options = {
-            "key": "rzp_test_qNV9WLxsfAwbiK", 
+            "key": "rzp_test_1xLFW3XMUr7klD", 
             "amount": "50000", 
             "currency": "INR",
             "name": "Better Tomorrow",
             "description": "Test Transaction",
             "image": "https://example.com/your_logo",
-            "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
             "handler": function (response){
                 alert(response.razorpay_payment_id);
                 alert(response.razorpay_order_id);
