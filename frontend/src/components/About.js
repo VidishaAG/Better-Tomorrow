@@ -1,9 +1,8 @@
 import React from 'react'
-
+import logo from '../assets/logo.png'
 
 export const About = () => {
 
-  
   return (
     <div>
     <div className="heading-container">
@@ -22,5 +21,6 @@ export const About = () => {
   <div className="vis-content"><p className="vis-content-2">We aim to become a thriving platform for social workers and others who want to bring about a change in the society. Like minded people can collaborate to solve major world problems.</p></div>
 </div>
  </div>
+
   )
 }
