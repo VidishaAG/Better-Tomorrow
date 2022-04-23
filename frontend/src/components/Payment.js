@@ -1,6 +1,59 @@
 import React from 'react';
 
+function loadScript(src){
+    return new Promise(resolve => {
+        const script = document.createElement('script')
+        script.src = src;
+        script.onload = () => {
+            resolve(true)
+        }
+        script.onerror = ()=>{
+            resolve(false)
+        }
+        document.body.appendChild(script)
+    })
+}
+
 const Payment = () => {
+    async function displayRazorpay(){
+
+        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+
+        if(!res){
+            alert('Network Error!')
+            return
+        }
+        var options = {
+            "key": "rzp_test_XNoNQDW2fTj9n3", 
+            "amount": "50000", 
+            "currency": "INR",
+            "name": "Better Tomorrow",
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function (response){
+                alert(response.razorpay_payment_id);
+                alert(response.razorpay_order_id);
+                alert(response.razorpay_signature)
+            },
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.on('payment.failed', function (response){
+            alert(response.error.code);
+            alert(response.error.description);
+            alert(response.error.source);
+            alert(response.error.step);
+            alert(response.error.reason);
+            alert(response.error.metadata.order_id);
+            alert(response.error.metadata.payment_id);
+        });
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+        const paymentObject = new window.Razorpay(options)
+        paymentObject.open()
+    }
   return (
     <div className="payment">
         <div className="BeautyBlock"></div>
@@ -20,7 +73,9 @@ const Payment = () => {
                 </tr>
             </table>
             <br />
-            <input type="submit" value="Submit" className="submitButton"/ >
+            <a className='App-link' onClick={displayRazorpay} target="_blank" rel='noopener noreferrer'>
+                Donate 500rs
+            </a>
         </form>
 
     </div>
