@@ -35,12 +35,14 @@
     align-items:center;
 
 }
-/* .payment div > a{
-    width: 10vw;
-    height: 5vh;
-    background-color: #9fdeaf;
-    color: white;
-} */
+.submitButton{
+    border-color: #96dbe2;
+    color: #fff;
+    padding: 5px;
+    background-color: #1ab188;
+    border-radius: 3px;
+    background-image: linear-gradient(to right, var(--left-color), var(--right-color));
+}
 .payment form{
     display: flex;
     flex-direction:column;

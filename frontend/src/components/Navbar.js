@@ -19,11 +19,14 @@ export const Navbar = () => {
           <Link to="/payment">Payment</Link>
         </div>
         <div className="navitem">
+          <Link to="/ngo">Featured NGOs</Link>
+        </div>
+        <div className="navitem">
           <Link to="/about">About Us</Link>
         </div>
       </div>
       <div className="profile">
-        <a href="/"><img src={user} alt="user.png" width="50" /></a>
+        <Link to="/"><img src={user} alt="user.png" width="50" /></Link>
       </div>
       <div>
       </div>

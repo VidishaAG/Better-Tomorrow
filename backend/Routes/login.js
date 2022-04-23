@@ -8,13 +8,13 @@ route.post("/login", (req, res) => {
   User.findOne({ email: email }, (err, user) => {
     if (user) {
       if (password === user.password) {
-        res.send({ message: "Login Successful", user: user, stat : "success" });
+        res.status(200).json({ message: "Login Successful", user: user, stat : "success" });
         console.log(user);
       } else {
-        res.send({ message: "Password didn't match" });
+        res.status(400).json({ message: "Password didn't match" });
       }
     } else {
-      res.send({ message: "User not registered" });
+      res.status(201).json({ message: "User not registered" });
     }
   });
 });
