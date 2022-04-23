@@ -12,6 +12,28 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width:400px;
 }
+.doFlex{
+    display: flex;
+    align-items: center;
+}
+.btn{
+    border-color: #96dbe2;
+    cursor: pointer;
+    color: #fff;
+    padding: 5px;
+    background-color: #1ab188;
+    border-radius: 3px;
+    background-image: linear-gradient(to right, var(--left-color), var(--right-color));
+    width: 30%;
+    margin-left: auto;
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+}
+.btn:hover{
+    background-image: linear-gradient(to right, #7aaa86, #76a9af);
+}
 .title h2{
     text-align: center;
 }
