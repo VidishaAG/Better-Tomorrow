@@ -1,29 +1,74 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 
 export const Login = () => {
 
-  const signup = async () => {
-    const url = "http://localhost:5000/register";
-    const data = {
-      "name": "Agent P",
-      "email": "perry@gmail.com",
-      "password": "OWCA"
-    };
+  const navigate = useNavigate();
+  
 
+  const signup = async (e) => {
+    e.preventDefault();
+    const name = document.getElementById("signup-name").value;
+    const email = document.getElementById("signup-email").value;
+    const password = document.getElementById("signup-password").value;
+    
+    const data = {
+      "name": name,
+      "email": email,
+      "password": password
+    };
+    
+    const url = "http://localhost:5000/register";
     const response = await fetch(url, {
       method: 'POST',
-      mode: 'cors',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: data
+      body: JSON.stringify(data)
     });
-    console.log(response.json());
+    const json = await response.json();
 
+    if (response.status === 200) {
+      alert(`User with email ${email} is already a member`);
+    }
+    else if (response.status === 201) {
+      localStorage.setItem("email", email);
+      navigate('/issues');
+      // localStorage.setItem("name", name);
+    }
+    else if (response.result === 400) {
+      alert("An error occured");
+    }
   }
-  const signin = async () => {
-
+  const signin = async (e) => {
+    e.preventDefault();
+    const email = document.getElementById("signin-email").value;
+    const password = document.getElementById("signin-password").value;
+    
+    const data = {
+      "email": email,
+      "password": password
+    };
+    
+    const url = "http://localhost:5000/login";
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
+    const json = await response.json();
+    
+    if (response.status === 200) {
+      localStorage.setItem("email", email);
+      navigate('/issues');
+    } else if (response.status === 201) {
+      alert("User not registered");
+    } else if (response.status === 400) {
+      alert("Incorrect password");
+    }
   }
 
   useEffect(() => {
@@ -134,8 +179,8 @@ export const Login = () => {
           </div>
           <p className="small">or use your email account:</p>
           <form id="sign-in-form">
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="email" placeholder="Email" id="signin-email" />
+            <input type="password" placeholder="Password" id="signin-password" />
             <p className="forgot-password">Forgot your password?</p>
             <button className="control-button in" onClick={signin}>Sign In</button>
           </form>
@@ -161,9 +206,9 @@ export const Login = () => {
           </div>
           <p className="small">or use your email for registration:</p>
           <form id="sign-up-form">
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="text" placeholder="Name" id="signup-name" />
+            <input type="email" placeholder="Email" id="signup-email" />
+            <input type="password" placeholder="Password" id="signup-password" />
             <button className="control-button up" onClick={signup}>Sign Up</button>
           </form>
         </div>

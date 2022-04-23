@@ -23,7 +23,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="profile">
-        <a href="/"><img src={user} alt="user.png" width="50" /></a>
+        <Link to="/"><img src={user} alt="user.png" width="50" /></Link>
       </div>
       <div>
       </div>
