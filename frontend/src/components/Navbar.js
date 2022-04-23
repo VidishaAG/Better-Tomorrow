@@ -4,7 +4,7 @@ import user from '../assets/user.png'
 
 export const Navbar = () => {
   return (
-    <>
+    <header>
       <div className="logoAndNav">
         <div className="logo">
           <img src={logo} alt="logo.png" width="100" />
@@ -24,6 +24,6 @@ export const Navbar = () => {
       </div>
       <div>
       </div>
-    </>
+    </header>
   )
 }
