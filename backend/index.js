@@ -42,3 +42,15 @@ mongoose
 
 app.use("/", LOGIN_ROUTE);
 app.use("/", REGISTER_ROUTE);
+
+// razor pay
+var instance = new Razorpay({
+    key_id: 'YOUR_KEY_ID',  
+    key_secret: 'YOUR_KEY_SECRET',
+  });
+// API signature
+// {razorpayInstance}.{resourceName}.{methodName}(resourceId [, params])
+
+// example
+
+instance.payments.fetch(paymentId)
