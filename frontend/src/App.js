@@ -15,12 +15,12 @@ import {
 } from "react-router-dom";
 
 import { Navbar } from './components/Navbar';
-import { Card } from './components/Card';
 import { Login } from './components/Login';
 import { About } from './components/About';
 import Payment from './components/Payment';
 import { NGO } from './components/NGO';
 import {IdeaSubmit} from './components/IdeaSubmit';
+import { CardList } from './components/CardList';
 
 import {Footer} from './components/Footer';
 
@@ -32,7 +32,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/issues" element={<Card />} />
+        <Route path="/issues" element={<CardList />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/about" element={<About />} />
         <Route path="/ngo" element={<NGO />} />

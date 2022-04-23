@@ -2,7 +2,7 @@ import {React,useState} from 'react'
 import user from '../assets/user.png'
 import upvote from '../assets/upvote.png'
 import {Link} from 'react-router-dom'
-export const Card = () => {
+export const Card = (props) => {
   const [counter,setCounter] = useState(0);
   const [x,setX] = useState(0);
   const fun = () => {
@@ -20,10 +20,10 @@ export const Card = () => {
   return (
     <div className="card">
       {/* TODO: 1. LINK PROFILE PHOTO AND NAME FROM DATABASE 2. MAKE STUFF CLICKABLE */}
-      <div className="nameAndProfile"><img src={user} alt="user.png" width="30px" /><span>Name</span></div>
-      <div className="title"><h2>Title</h2></div>
+      <div className="nameAndProfile"><img src={user} alt="user.png" width="30px" /><span>{props.name}</span></div>
+      <div className="title"><h2>{props.heading}</h2></div>
       <div className="cardBody">
-        <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ratione quos quae quo aliquam, beatae ducimus deserunt voluptatum eaque facere impedit quas ipsam cum vero velit deleniti numquam sapiente sunt magnam iure. Vel libero veritatis aliquam laudantium id laborum consequuntur est dolorum? Facere, doloribus repellat! Maxime, eius amet. Vero, libero.</p>
+        <p>{props.description}</p>
       </div>
       <div className='doFlex'>
         <div className="votesAndComments">
