@@ -23,6 +23,11 @@ const Payment = () => {
             alert('Network Error!')
             return
         }
+
+        const data = await fetch('http://localhost:5000/razorpay', { method: 'POST' }).then((t) => 
+            t.json()
+        )
+        console.log(data)
         var options = {
             "key": "rzp_test_XNoNQDW2fTj9n3", 
             "amount": "50000", 

@@ -2,9 +2,15 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-
+const shortid = require('shortid')
 import LOGIN_ROUTE from "./Routes/login.js";
 import REGISTER_ROUTE from "./Routes/register.js";
+
+const Razorpay = require('razorpay');
+const razorpay = new Razorpay({
+  key_id: 'rzp_test_XNoNQDW2fTj9n3',
+  key_secret: 'QYaFd5DEMEDaY7Sq9liC0ael',
+});
 
 const app = express();
 
@@ -44,13 +50,12 @@ app.use("/", LOGIN_ROUTE);
 app.use("/", REGISTER_ROUTE);
 
 // razor pay
-var instance = new Razorpay({
-    key_id: 'YOUR_KEY_ID',  
-    key_secret: 'YOUR_KEY_SECRET',
-  });
-// API signature
-// {razorpayInstance}.{resourceName}.{methodName}(resourceId [, params])
-
-// example
-
-instance.payments.fetch(paymentId)
+app.post('/razorpay', async (req, res) => {
+  razorpay.orders.create({
+    amount: (amount * 100).toString(), 
+    currency, 
+    receipt: , 
+    payment_capture, 
+    notes
+  })
+})
