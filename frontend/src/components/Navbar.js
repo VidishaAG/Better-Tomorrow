@@ -18,7 +18,10 @@ export const Navbar = () => {
         <div className="navitem">
           <Link to="/ngo">Featured NGOs</Link>
         </div>
-        <div className="4navitem">
+        <div className="navitem">
+          <Link to="/ideasubmit">Submit Ideas</Link>
+        </div>
+        <div className="navitem">
           <Link to="/about">About Us</Link>
         </div>
       </div>
