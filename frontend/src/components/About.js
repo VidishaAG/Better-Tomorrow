@@ -5,41 +5,22 @@ export const About = () => {
 
   
   return (
-    <div className="About">
-      <div className="row">
-        <div className="containers col-lg-6 col-md-6">
-          
-          <div className="pic"></div>
-          
-          <div className="box1"></div>
-          <div className="box2"></div>
-          
-          <div className="social1">
-            <i className="fa fa-facebook" aria-hidden="true"></i> 
-          </div>
-          <div className="social2">
-          <i className="fa fa-dribbble" aria-hidden="true"></i>
-          </div>
-          <div className="social3">
-            <i className="fa fa-codepen" aria-hidden="true"></i>
-          </div>
-        </div>
-
-        <div className="content col-md-offset-6 col-lg-offset-6">
-          <center><h1 className="contentHead">ABOUT ME</h1></center>
-          
-          <h2>Hi Folks, <br/><br/>
-            This is Shaik Maqsood. I'm a Freakin frontend developer, jus came up with this concept of having a 45<sup>o</sup> trasformed DIV with a -45<sup>o</sup> background.<br/><br/>
-            Can't belive that it worked.
-            <br/><br/>
-            Show your L<span>&hearts;</span>VE if you like my pen.
-            <br/><br/>
-            <p>(NOTICE: The lady in the PIC is not me, I'm a guy :P)</p>
-            <p><span>* No matter what u say, that gal is sorta cute.</span></p>
-          </h2>
-        </div>
-      </div>   
-
-    </div>
+    <div>
+    <div className="heading-container">
+   <h1 className="heading1">Better Tomorrow</h1>
+   <h2 className="heading2">A Little About Us</h2>
+   <div className="p-content"><p className="heading-content">We are community driven website where anyone can raise a social issue and can give ideas to be implemented for the
+     betterment of our society.</p></div>
+   </div>
+<br></br>
+<br></br>
+<hr className="line"></hr>
+<br></br>
+<br></br>
+<div className="vision">
+<h1 className="vision-h">Our Vision</h1>
+  <div className="vis-content"><p className="vis-content-2">We aim to become a thriving platform for social workers and others who want to bring about a change in the society. Like minded people can collaborate to solve major world problems.</p></div>
+</div>
+ </div>
   )
 }
