@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import Razorpay from 'razorpay';
 function loadScript(src){
     return new Promise(resolve => {
         const script = document.createElement('script')
@@ -29,7 +29,7 @@ const Payment = () => {
         )
         console.log(data)
         var options = {
-            "key": "rzp_test_XNoNQDW2fTj9n3", 
+            "key": "rzp_test_qNV9WLxsfAwbiK", 
             "amount": "50000", 
             "currency": "INR",
             "name": "Better Tomorrow",
@@ -78,9 +78,12 @@ const Payment = () => {
                 </tr>
             </table>
             <br />
-            <a className='App-link' onClick={displayRazorpay} target="_blank" rel='noopener noreferrer'>
-                Donate 500rs
-            </a>
+            <div className='btn'>
+                <a className='App-link' onClick={displayRazorpay} target="_blank" rel='noopener noreferrer' id='rzp-button1'>
+                    Donate 500rs
+                </a>
+
+            </div>
         </form>
 
     </div>

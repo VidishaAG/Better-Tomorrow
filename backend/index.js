@@ -2,14 +2,14 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-const shortid = require('shortid')
+import shortid from "shortid";
 import LOGIN_ROUTE from "./Routes/login.js";
 import REGISTER_ROUTE from "./Routes/register.js";
 
-const Razorpay = require('razorpay');
+import Razorpay from "razorpay";
 const razorpay = new Razorpay({
-  key_id: 'rzp_test_XNoNQDW2fTj9n3',
-  key_secret: 'QYaFd5DEMEDaY7Sq9liC0ael',
+  key_id: 'rzp_test_qNV9WLxsfAwbiK',
+  key_secret: 'ONs4O72R8YVGDfoDnlACLYVD',
 });
 
 const app = express();
@@ -50,12 +50,60 @@ app.use("/", LOGIN_ROUTE);
 app.use("/", REGISTER_ROUTE);
 
 // razor pay
+
+app.use(cors())
+app.use(bodyParser.json())
+
+
+app.get('/logo.svg', (req, res) => {
+	res.sendFile(path.join(__dirname, 'logo.svg'))
+})
+
+app.post('/verification', (req, res) => {
+	// do a validation
+	const secret = '12345678'
+
+	console.log(req.body)
+
+	const crypto = require('crypto')
+
+	const shasum = crypto.createHmac('sha256', secret)
+	shasum.update(JSON.stringify(req.body))
+	const digest = shasum.digest('hex')
+
+	console.log(digest, req.headers['x-razorpay-signature'])
+
+	if (digest === req.headers['x-razorpay-signature']) {
+		console.log('request is legit')
+		// process it
+		require('fs').writeFileSync('payment1.json', JSON.stringify(req.body, null, 4))
+	} else {
+		// pass it
+	}
+	res.json({ status: 'ok' })
+})
+
 app.post('/razorpay', async (req, res) => {
-  razorpay.orders.create({
-    amount: (amount * 100).toString(), 
-    currency, 
-    receipt: , 
-    payment_capture, 
-    notes
-  })
+	const payment_capture = 1
+	const amount = 499
+	const currency = 'INR'
+
+	const options = {
+		amount: amount * 100,
+		currency,
+		receipt: shortid.generate(),
+		payment_capture
+	}
+
+	try {
+		const response = await razorpay.orders.create(options)
+		console.log(response)
+		res.json({
+			id: response.id,
+			currency: response.currency,
+			amount: response.amount
+		})
+	} catch (error) {
+		console.log(error)
+	}
 })
