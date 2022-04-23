@@ -45,12 +45,10 @@ export const Login = () => {
     e.preventDefault();
     const email = document.getElementById("signin-email").value;
     const password = document.getElementById("signin-password").value;
-
     const data = {
       "email": email,
       "password": password
     };
-
     const url = "http://localhost:5000/login";
     const response = await fetch(url, {
       method: 'POST',
@@ -60,7 +58,6 @@ export const Login = () => {
       body: JSON.stringify(data)
     });
     const json = await response.json();
-
     if (response.status === 200) {
       localStorage.setItem("email", email);
       navigate('/issues');
