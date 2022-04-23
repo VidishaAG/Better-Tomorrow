@@ -24,6 +24,9 @@ export const Navbar = () => {
         <div className="navitem">
           <Link to="/about">About Us</Link>
         </div>
+        <div className="navitem">
+          <Link to="/leaderboard">Leaderboard</Link>
+        </div>
       </div>
       <div className="profile">
         
