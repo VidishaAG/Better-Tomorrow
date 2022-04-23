@@ -11,7 +11,7 @@ header{
 .navitem{
     padding: 0 15px;
     margin: auto 0;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 .navitem a{

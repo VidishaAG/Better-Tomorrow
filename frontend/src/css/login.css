@@ -6,7 +6,7 @@
     /*  Light Blue  */
     --right-color: #96dbe2;
   }
-  
+
   .container{
     width: var(--form-width);
     height: var(--form-height);
@@ -16,13 +16,13 @@
     border-radius: 10px;
     margin-top: 50px;
   }
-  /* 
+  /*
   ----------------------
         Overlay
   ----------------------
   */
   .overlay{
-    width: 100%; 
+    width: 100%;
     height: 100%;
     position: absolute;
     z-index: 100;
@@ -31,15 +31,15 @@
     color: white;
     clip: rect(0, 385px, var(--form-height), 0);
   }
-  
+
   .open-sign-up{
       animation: slideleft 1s linear forwards;
   }
-  
+
   .open-sign-in{
       animation: slideright 1s linear forwards;
   }
-  
+
   .overlay .sign-in, .overlay .sign-up{
     /*  Width is 385px - padding  */
     --padding: 50px;
@@ -52,41 +52,41 @@
     padding: 0px var(--padding);
     text-align: center;
   }
-  
+
   .overlay .sign-in{
     float: left;
   }
-  
+
   .overlay-text-left-animation{
       animation: text-slide-in-left 1s linear;
   }
   .overlay-text-left-animation-out{
       animation: text-slide-out-left 1s linear;
   }
-  
+
   .overlay .sign-up{
     float:right;
   }
-  
+
   .overlay-text-right-animation{
       animation: text-slide-in-right 1s linear;
   }
-  
+
   .overlay-text-right-animation-out{
       animation: text-slide-out-right 1s linear;
   }
-  
-  
+
+
   .overlay h1{
     margin: 0px 5px;
     font-size: 2.1rem;
   }
-  
+
   .overlay p{
     margin: 20px 0px 30px;
     font-weight: 200;
   }
-  /* 
+  /*
   ------------------------
         Buttons
   ------------------------
@@ -104,40 +104,40 @@
     border-radius: 20px;
     color: white;
   }
-  
+
   .switch-button{
     border: 2px solid;
   }
-  
+
   .control-button{
     border: none;
     margin-top: 15px;
   }
-  
+
   .switch-button:focus, .control-button:focus{
     outline:none;
   }
-  
+
   .control-button.up{
     background-color: var(--left-color);
   }
-  
+
   .control-button.in{
     background-color: var(--right-color);
   }
-  
-  /* 
+
+  /*
   --------------------------
         Forms
   --------------------------
   */
   .form{
-    width: 100%; 
+    width: 100%;
     height: 100%;
     position: absolute;
     border-radius: 10px;
   }
-  
+
   .form .sign-in, .form .sign-up{
     --padding: 50px;
     position:absolute;
@@ -151,53 +151,53 @@
     padding: 0px var(--padding);
     text-align: center;
   }
-  
+
   /* Sign in is initially not displayed */
   .form .sign-in{
     display: none;
   }
-  
+
   .form .sign-in{
     left:0;
   }
-  
+
   .form .sign-up{
     right: 0;
   }
-  
+
   .form-right-slide-in{
     animation: form-slide-in-right 1s;
   }
-  
+
   .form-right-slide-out{
     animation: form-slide-out-right 1s;
   }
-  
+
   .form-left-slide-in{
     animation: form-slide-in-left 1s;
   }
-  
+
   .form-left-slide-out{
     animation: form-slide-out-left 1s;
   }
-  
+
   .form .sign-in h1{
     color: var(--right-color);
     margin: 0;
   }
-  
+
   .form .sign-up h1{
     color: var(--left-color);
     margin: 0;
   }
-  
+
   .social-media-buttons{
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 15px;
   }
-  
+
   .social-media-buttons .icon{
     width: 40px;
     height: 40px;
@@ -208,19 +208,19 @@
     align-items: center;
     margin: 10px 7px;
   }
-  
+
   .small{
     font-size: 13px;
     color: grey;
     font-weight: 200;
     margin: 5px;
   }
-  
+
   .social-media-buttons .icon svg{
     width: 25px;
     height: 25px;
   }
-  
+
   #sign-in-form input, #sign-up-form input{
     margin: 12px;
     font-size: 14px;
@@ -229,27 +229,27 @@
     font-weight: 300;
     border: none;
     background-color: #e4e4e494;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 1.5px;
     padding-left: 20px;
   }
-  
+
   #sign-in-form input::placeholder{
     letter-spacing: 1px;
   }
-  
+
   .forgot-password{
     font-size: 12px;
     display: inline-block;
     border-bottom: 2px solid #efebeb;
     padding-bottom: 3px;
   }
-  
+
   .forgot-password:hover{
     cursor: pointer;
   }
-  
-  /* 
+
+  /*
   ---------------------------
       Animation
   ---------------------------
@@ -272,7 +272,7 @@
        clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 385px));
     }
   }
-  
+
   @keyframes slideleft{
     100%{
       clip: rect(0, 385px, var(--form-height), 0);
@@ -291,7 +291,7 @@
        clip: rect(0px, var(--form-width), var(--form-height), calc(var(--form-width) - 385px));
     }
   }
-  
+
   @keyframes text-slide-in-left{
     0% {
       padding-left: 20px;
@@ -300,7 +300,7 @@
       padding-left: 50px;
     }
   }
-  
+
   @keyframes text-slide-in-right{
     0% {
       padding-right: 20px;
@@ -309,7 +309,7 @@
       padding-right: 50px;
     }
   }
-  
+
   @keyframes text-slide-out-left{
     0% {
       padding-left: 50px;
@@ -318,7 +318,7 @@
       padding-left: 20px;
     }
   }
-  
+
   @keyframes text-slide-out-right{
     0% {
       padding-right: 50px;
@@ -327,7 +327,7 @@
       padding-right: 20px;
     }
   }
-  
+
   @keyframes form-slide-in-right{
     0%{
       padding-right: 100px;
@@ -336,7 +336,7 @@
       padding-right: 50px;
     }
   }
-  
+
   @keyframes form-slide-in-left{
     0%{
       padding-left: 100px;
@@ -345,7 +345,7 @@
       padding-left: 50px;
     }
   }
-  
+
   @keyframes form-slide-out-right{
     0%{
       padding-right: 50px;
@@ -354,7 +354,7 @@
       padding-right: 80px;
     }
   }
-  
+
   @keyframes form-slide-out-left{
     0%{
       padding-left: 50px;
@@ -363,5 +363,5 @@
       padding-left: 80px;
     }
   }
-  
- 
+
+

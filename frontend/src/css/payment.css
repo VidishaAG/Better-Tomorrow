@@ -1,0 +1,12 @@
+
+.payment{
+    /* margin : 0 auto; */
+    background-color: red;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.submitBUtton{
+    margin: auto 0;
+}
