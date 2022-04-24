@@ -24,12 +24,15 @@ export const Navbar = () => {
         <div className="navitem">
           <Link to="/about">About Us</Link>
         </div>
+        <div className="navitem">
+          <Link to="/leaderboard">Leaderboard</Link>
+        </div>
       </div>
       <div className="profile">
         
-        <div class="dropdown">
-        <button class="dropbtn"><span>{localStorage.email}</span></button>
-        <div class="dropdown-content">
+        <div className="dropdown">
+        <button className="dropbtn"><span>{localStorage.email}</span></button>
+        <div className="dropdown-content">
           <a href="#">Link 1</a>
           <a href="#">Link 2</a>
           <a href="#">Link 3</a>
