@@ -29,7 +29,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="profile">
-
+        
         <div className="dropdown">
         <button className="dropbtn"><span>{localStorage.email}</span></button>
         <div className="dropdown-content">
